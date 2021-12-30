@@ -37,14 +37,14 @@ jobs:
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
         with:
-          appId: '1:152281223174:android:9912bd92f1e611abc9f387'
-          token: '1//0gG_860pZbjE2CgYIARAAGBASNwF-L9IrO_GgX8aNj4RVEkZS-IQre1QqZIxjeI78uHpwcQbVzFZfY7ihzBfEMilUs60tkjWgHZk'
+          appId: '1:152281223174:android:55b62173743dab53c9f387'
+          token: '1//0gB8TeF8yCOJGCgYIARAAGBASNwF-L9IrfUWYvmyojLN-ANDC2gxDWxNQxijWRZNDbLbNltXmTDlhXkh1GUIjsTiVMj7uy8t19bU'
           groups: tester
           file: app/build/outputs/apk/debug/app-debug.apk
 
 
   apk:
-    name: Generate Debug APK
+    name: Generate APK
     runs-on: ubuntu-latest
 
     steps:
