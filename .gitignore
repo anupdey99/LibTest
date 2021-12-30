@@ -39,5 +39,6 @@ app/release
 #*.jks
 *.keystore
 /keystore.properties
+/github.properties
 .cxx
 

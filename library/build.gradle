@@ -4,9 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.anupdey99'
-version = '1.0.0'
-
 android {
     compileSdk 30
 
@@ -48,12 +45,38 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
+            // Jitpack publication
+            /*release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.anupdey99'
                 artifactId = 'libtest'
                 version = '1.0.0'
+            }*/
+
+            //github package
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.anupdey99'
+                artifactId 'libtest'
+                version '1.0.0'
+            }
+            debug(MavenPublication) {
+                from components.debug
+                groupId 'com.github.anupdey99'
+                artifactId 'libtest'
+                version '1.0.0'
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                // Replace GITHUB_USERID with your personal or organisation user ID and
+                // REPOSITORY with the name of the repository on GitHub
+                url = uri("https://maven.pkg.github.com/anupdey99/LibTest")
+                credentials {
+                    username = rootProject.ext.user
+                    password = rootProject.ext.key
+                }
             }
         }
     }
